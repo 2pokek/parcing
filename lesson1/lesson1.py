@@ -38,8 +38,8 @@ print(find_all_spans_in_user_info)
 print(find_all_spans_in_user_info[0])
 print(find_all_spans_in_user_info[2].text)
 
-social_links = soup.find(class_='social__networks').find('url').find_all('a')
-print(social_links)
+# social_links = soup.find(class_='social__networks').find('url').find_all('a')
+# print(social_links)
 
 all_a = soup.find_all('a')
 print(all_a)
@@ -48,3 +48,30 @@ for item in all_a:
     item_text = item.text
     item_url = item.get('href')
     print(f'{item_text}:{item_url}')
+
+# find_parent() .find_parents()
+
+# post_div = soup.find(class_='post__text').find_parent()
+# print(post_div)
+
+post_div = soup.find(class_='post__text').find_parent('div', 'user__post')
+print(post_div)
+
+post_divs = soup.find(class_='post__text').find_parents('div', 'user__post')
+print(post_divs)
+
+# .next_element .previous_element
+
+# next_el = soup.find(class_='post__text').next_element.next_element.text
+# print(next_el)
+
+next_el = soup.find(class_='post__text').find_next().text
+print(next_el)
+
+# .find_next_sibling() .find_previous_sibling()
+
+next_sib = soup.find(class_='post__text').find_next_sibling()
+print(next_sib)
+
+previous_sib = soup.find(class_='post__text').find_previous_sibling()
+print(previous_sib)
