@@ -1,3 +1,5 @@
+import re
+
 from bs4 import BeautifulSoup
 
 with open("blank/index.html") as file:
@@ -75,3 +77,31 @@ print(next_sib)
 
 previous_sib = soup.find(class_='post__text').find_previous_sibling()
 print(previous_sib)
+
+post_title = soup.find(class_='post__text').find_previous_sibling().find_next().text
+print(post_title)
+
+links = soup.find(class_='some__links').find_all("a")
+print(links)
+
+for link in links:
+    link_href_attr = link.get('href')
+    link_href_attr1 = link['href']
+
+    link_data_attr = link.get('data-attr')
+    link_data_attr1 = link['data-attr']
+
+    print(link_href_attr)
+    print(link_data_attr)
+
+find_a_by_text = soup.find('a',text='Clothes')
+print(find_a_by_text)
+
+find_a_by_text = soup.find('a',text='Clothes for adults')
+print(find_a_by_text)
+
+find_a_by_text = soup.find('a',text=re.compile('Clothes'))
+print(find_a_by_text)
+
+find_all_clothes = soup.find_all(text=re.compile("([Ss]hop)"))
+print(find_all_clothes)
