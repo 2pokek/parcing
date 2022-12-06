@@ -28,3 +28,21 @@ def get_data():
         f.write(img2pdf.convert(img_list))
 
     print("PDF file created successfully!")
+def write_to_pdf():
+    # print(os.listdir("media"))
+    img_list = [f"media/{i}.jpg" for i in range(1, 49)]
+
+    # create PDF file
+    with open("result.pdf", "wb") as f:
+        f.write(img2pdf.convert(img_list))
+
+    print("PDF file created successfully!")
+
+
+def main():
+    # get_data()
+    write_to_pdf()
+
+
+if __name__ == '__main__':
+    main()
