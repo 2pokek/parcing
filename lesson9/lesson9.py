@@ -89,14 +89,14 @@ def get_data():
             except:
                 book_status = "Нет статуса"
 
-            # print(book_title)
-            # print(book_author)
-            # print(book_publishing)
-            # print(book_new_price)
-            # print(book_old_price)
-            # print(book_sale)
-            # print(book_status)
-            # print("#" * 10)
+            print(book_title)
+            print(book_author)
+            print(book_publishing)
+            print(book_new_price)
+            print(book_old_price)
+            print(book_sale)
+            print(book_status)
+            print("#" * 10)
 
             books_data.append(
                 {
