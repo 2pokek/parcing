@@ -5,7 +5,7 @@ from pynput.keyboard import Listener, KeyCode
 
 toggle_key = KeyCode(char='p')
 clicking = False
-mouse = Controller
+mouse = Controller()
 
 def clicker():
     while True:
