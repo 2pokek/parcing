@@ -5,7 +5,7 @@ def helper(i):
 
     ans = float('inf')
 
-    for j in range(1,nums[1]):
+    for j in range(1,nums[1]+1):
         ans = min(ans,1 +helper(i + j))
     return ans
 
