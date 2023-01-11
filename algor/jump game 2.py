@@ -7,7 +7,7 @@ class Solution:
 
             ans = float('inf')
 
-            for j in range(1,nums[1]+1):
+            for j in range(1,nums[i]+1):
                 ans = min(ans,1 +helper(i + j))
             return ans
         return helper(0)
