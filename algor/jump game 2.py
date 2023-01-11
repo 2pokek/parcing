@@ -1,6 +1,6 @@
 
 def helper(i):
-    if i == len(nums) - 1:
+    if i => len(nums) - 1:
         return 0
 
     ans = float('inf')
